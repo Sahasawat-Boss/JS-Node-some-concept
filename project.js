@@ -1,7 +1,7 @@
 //* Functions in this Project
 //* 1. Despot some money << Done!
-// 2. Determine number of lines to bet on
-// 3. Collect a bet amount
+//* 2. Determine number of lines to bet on << Done!
+// 3. Collect a bet amount << 21.02 min
 // 4. Spin the slot machine
 // 5. check if the user won
 // 6. give the user their winnings
@@ -42,6 +42,31 @@ const deposit = () => {
 };
 
 
+// Define an arrow function named 'getNumberOfLines' that prompts the user for input.
+const getNumberOfLines = () => {
+    while (true) { // Start an infinite loop to ensure valid input is received.
+
+        // Prompt the user to enter the number of lines (between 1 and 3).
+        const lines = prompt("Enter the number of lines to bet on (1-3): ");
+
+        // Convert the input from a string to a floating-point number.
+        const numberOfLines = parseFloat(lines);
+
+        // Validate the input:
+        // - Check if it's a number (not NaN)
+        // - Ensure it's greater than 0
+        // - Ensure it's not greater than 3 (within allowed range)
+        if (isNaN(numberOfLines) || numberOfLines <= 0 || numberOfLines > 3) {
+            console.log("Invalid number of lines, try again."); // Display an error message if input is invalid.
+        } else {
+            return numberOfLines; // If valid, return the number of lines and exit the loop.
+        }
+    }
+};
+
+
+
+
 //in JavaScript, function definitions do not need to be listed in order,
 // but functions must be called in the correct order to avoid errors.
 //*------------------------------------------------------------------------------------------
@@ -50,6 +75,12 @@ const deposit = () => {
 const depositeAmount = deposit();
 console.log("Your Balance is " + depositeAmount);
 // Print the user's balance after depositing.
+
+// Call the 'getNumberOfLines' function and store the returned value in 'numberOfLines'.
+const numberOfLines = getNumberOfLines();
+console.log("Your number of lines is " + numberOfLines);
+// Display the selected number of lines in the console.
+
 
 // To run this script in the terminal, use the following command:
 // node project.js
