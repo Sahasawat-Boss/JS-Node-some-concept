@@ -1,0 +1,10 @@
+Installation Step
+
+1.npm init
+    just enter all
+2.package
+    npm i prompt-sync
+    For collect user input
+
+
+https://www.youtube.com/watch?v=E3XxeE7NF30&list=WL&index=39
