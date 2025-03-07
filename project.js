@@ -1,8 +1,8 @@
 //* Functions in this Project
 //* 1. Despot some money << Done!
 //* 2. Determine number of lines to bet on << Done!
-// 3. Collect a bet amount << 21.02 min
-// 4. Spin the slot machine
+//* 3. Collect a bet amount << Done! 
+// 4. Spin the slot machine << 26.15 min
 // 5. check if the user won
 // 6. give the user their winnings
 // 7. play again
@@ -19,6 +19,28 @@ const prompt = require("prompt-sync")();
 // The parentheses () at the end immediately invoke the function, 
 // giving access to the 'prompt' function for taking user input.
 
+//Global Variable
+const ROWS = 3;
+const COLS = 3;
+
+const SYMBOLS_COUNT = {
+    A: 2,
+    B: 4,
+    C: 6,
+    D: 8,
+};
+
+const SYMBOL_VALUES = {
+    A: 5,
+    B: 4,
+    C: 3,
+    D: 2,
+};
+
+//Mulitply bet by ...
+
+
+// Functions:
 // Define a function named 'deposit' using arrow function syntax.
 const deposit = () => {
     while (true) { // Start an infinite loop to continuously prompt for a valid deposit amount.
@@ -86,6 +108,14 @@ const getBet = (balance, lines) => {
     }
 };
 
+const spin = () => {
+    const symbols = [];
+    for (const [symbol, count] of Object.entries(SYMBOLS_COUNT)) {
+        for (let i = 0; i < count; i++) {
+            symbols.push(symbol);
+        }
+    }
+}
 
 
 
@@ -96,7 +126,7 @@ const getBet = (balance, lines) => {
 
 // Call the 'deposit' function and store the valid deposit amount in 'depositeAmount' variable.
 let balance = deposit();
-console.log("Your Balance is " + balance);
+console.log("You have a balance of $" + balance);
 // let to  can change value later on.
 // Print the user's balance after depositing.
 
