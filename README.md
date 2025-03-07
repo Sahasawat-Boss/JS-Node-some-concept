@@ -1,5 +1,10 @@
 ## JS-Node-some-concept
 
-run in terminal >>node project.js
+To run this script in the terminal, use the following command:
+>node project.js
 
-![image](https://github.com/user-attachments/assets/500cf8e3-ea15-4b33-8d54-97d0ee6eb6a3)
+1.Function Deposite Money
+
+![Screenshot 2025-03-07 092720](https://github.com/user-attachments/assets/42cae4f1-e4a3-404a-b896-288da9ffd264)
+
+
