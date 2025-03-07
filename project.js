@@ -64,6 +64,29 @@ const getNumberOfLines = () => {
     }
 };
 
+// Define an arrow function named 'getBet' that takes 'balance' and 'lines' as parameters.
+const getBet = (balance, lines) => {
+    while (true) { // Start an infinite loop to ensure the user enters a valid bet.
+
+        // Prompt the user to enter a bet amount per line.
+        const bet = prompt("Enter the bet per line: ");
+
+        // Convert the input from a string to a floating-point number.
+        const numberBet = parseFloat(bet);
+
+        // Validate the input:
+        // - Check if it's a number (not NaN)
+        // - Ensure it's greater than 0
+        // - Ensure it does not exceed the total balance divided by the number of lines
+        if (isNaN(numberBet) || numberBet <= 0 || numberBet > balance / lines) {
+            console.log("Invalid bet, try again."); // Display an error message if input is invalid.
+        } else {
+            return numberBet; // If valid, return the bet amount and exit the loop.
+        }
+    }
+};
+
+
 
 
 
@@ -72,8 +95,9 @@ const getNumberOfLines = () => {
 //*------------------------------------------------------------------------------------------
 
 // Call the 'deposit' function and store the valid deposit amount in 'depositeAmount' variable.
-const depositeAmount = deposit();
-console.log("Your Balance is " + depositeAmount);
+let balance = deposit();
+console.log("Your Balance is " + balance);
+// let to  can change value later on.
 // Print the user's balance after depositing.
 
 // Call the 'getNumberOfLines' function and store the returned value in 'numberOfLines'.
@@ -81,6 +105,14 @@ const numberOfLines = getNumberOfLines();
 console.log("Your number of lines is " + numberOfLines);
 // Display the selected number of lines in the console.
 
+// Call the 'getBet' function with 'balance' and 'numberOfLines' as arguments.
+// The function will ensure the user enters a valid bet amount.
+const bet = getBet(balance, numberOfLines);
+// Display the user's bet amount in the console.
+console.log("Your bet is " + bet);
+
+
+//*------------------------------------------------------------------------------------------
 
 // To run this script in the terminal, use the following command:
 // node project.js
